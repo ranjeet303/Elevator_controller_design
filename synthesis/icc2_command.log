@@ -1,0 +1,212 @@
+#@ # 
+#@ # Running icc2_shell Version U-2022.12-SP3 for linux64 -- Apr 18, 2023
+#@ # Date:   Thu Mar 27 19:24:36 2025
+#@ # Run by: vlsi19@ece.nitdgp.ac.in
+#@ 
+
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+set PDK_PATH "/home/vlsi19/Desktop/24EC4204/dc_elevator/ref";
+create_lib -ref_lib $PDK_PATH/lib/ndm/saed32rvt_c.ndm elevator_lib
+#reading netlist and SDC
+read_verilog /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_netlist.v
+read_sdc /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_sdc_report.sdc
+check_design
+#mcmm
+#source -echo ../design_data/mcmm_risc_core.tcl
+#floor plan
+initialize_floorplan  -core_utilization 0.4 -core_offset {3 3} -coincident_boundary false
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{1,2}
+place_pins -ports [get_ports -filter direction==in]
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{3,4}
+place_pins -ports [get_ports -filter direction==out]
+set_attribute [get_ports *] physical_status fixed
+win_set_filter -visible -class cell -filter {assembly_die_margin clock_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin}
+win_set_filter -visible -class pseudo_bump -filter {deleted}
+win_set_filter -visible -class pseudo_tsv -filter {deleted}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage block_shielding topology_node topology_edge topology_repeater annotation_shape core_area die_area edit_group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {array assembly_die_margin clock_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin}
+win_set_filter -class pseudo_bump -filter {deleted}
+win_set_filter -class pseudo_tsv -filter {deleted}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage topology_node topology_edge topology_repeater annotation_shape edit_group shape via placement_blockage }
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{3,4}
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides {3,4}
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{3 4}
+set PDK_PATH "/home/vlsi19/Desktop/24EC4204/dc_elevator/ref";
+create_lib -ref_lib $PDK_PATH/lib/ndm/saed32rvt_c.ndm elevator_lib
+# Reading netlist and SDC files
+read_verilog /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_netlist.v
+read_sdc /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_sdc_report.sdc
+# Check design integrity
+check_design
+# Floor plan
+initialize_floorplan -core_utilization 0.4 -core_offset {3 3} -coincident_boundary false
+# Pin placement for input ports
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides {1 2}
+place_pins -ports [get_ports -filter {direction==in}]
+# Pin placement for output ports
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides {3 4}  # Fixed syntax error
+place_pins -ports [get_ports -filter {direction==out}]
+set_attribute [get_ports *] physical_status fixed
+# Parasitic reading
+set PDK_PATH "/home/vlsi19/Desktop/24EC4204/dc_elevator/ref"
+set parasitic1 "p1"
+set tluplus_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"
+set layer_map_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
+set parasitic2 "p2"
+set tluplus_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus"
+set layer_map_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
+read_parasitic_tech -tlup $tluplus_file$parasitic1 -layermap $layer_map_file$parasitic1 -name $parasitic1
+read_parasitic_tech -tlup $tluplus_file$parasitic2 -layermap $layer_map_file$parasitic2 -name $parasitic2
+set_parasitic_parameters -late_spec $parasitic1 -early_spec $parasitic2
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+set PDK_PATH "/home/vlsi19/Desktop/24EC4204/dc_elevator/ref";
+create_lib -ref_lib $PDK_PATH/lib/ndm/saed32rvt_c.ndm elevator_lib
+#reading netlist and SDC
+read_verilog /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_netlist.v
+read_sdc /home/vlsi19/Desktop/24EC4204/dc_elevator/pd/elevator_sdc_report.sdc
+check_design
+initialize_floorplan  -core_utilization 0.4 -core_offset {3 3} -coincident_boundary false
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{1,2}
+place_pins -ports [get_ports -filter direction==in]
+set_block_pin_constraints -self -allowed_layers {M3 M4} -sides{3,4}
+place_pins -ports [get_ports -filter direction==out]
+set_attribute [get_ports *] physical_status fixed
+set PDK_PATH /home/vlsi19/Desktop/24EC4204/dc_elevator/ref
+set parasitic1 "p1"
+set tluplus_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"
+set layer_map_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
+set parasitic2 "p2"
+set tluplus_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus"
+set layer_map_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
+read_parasitic_tech -tlup $tluplus_filep1 -layermap $layer_map_filep1 -name p1
+read_parasitic_tech -tlup $tluplus_filep2 -layermap $layer_map_filep2 -name p2
+set_parasitic_parameters -late_spec $parasitic1 -early_spec $parasitic2
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+create_pg_ring_pattern core_ring_pattern -horizontal_layer M7 -horizontal_width .4 -horizontal_spacing .3 -vertical_layer M8 -vertical_width .4 -vertical_spacing .3
+set_pg_strategy core_power_ring -core -pattern {{name : core_ring_pattern}{nets : {VDD VSS}}{offset : {.5 .5}}}
+compile_pg -strategies core_power_ring
+create_pg_ring_pattern core_ring_pattern -horizontal_layer M7 -horizontal_width .4 -horizontal_spacing .3 -vertical_layer M8 -vertical_width .4 -vertical_spacing .3
+set_pg_strategy core_power_ring -core -pattern {{name : core_ring_pattern}{nets : {VDD VSS}}{offset : {.5 .5}}}
+compile_pg -strategies core_power_ring
+create_net -power {VDD}
+create_net -ground {VSS}
+connect_pg_net -all_blocks -automatic
+create_pg_ring_pattern core_ring_pattern -horizontal_layer M7 -horizontal_width .4 -horizontal_spacing .3 -vertical_layer M8 -vertical_width .4 -vertical_spacing .3
+set_pg_strategy core_power_ring -core -pattern {{name : core_ring_pattern}{nets : {VDD VSS}}{offset : {.5 .5}}}
+compile_pg -strategies core_power_ring
+create_pg_mesh_pattern mesh -layers { {{vertical_layer: M6}{width: .34} {spacing: interleaving}{pitch: 5} {offset: .5}} {{horizontal_layer: M7}{width: .38} {spacing: interleaving} {pitch: 5} {offset: .5}} {{vertical_layer: M8}{width: .38} {spacing: interleaving}{pitch: 5} {offset: .5}}}
+set_pg_strategy core_mesh -pattern { {pattern:mesh} {nets: VDD VSS}} -core -extension {stop: innermost_ring}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {21.060 -0.274}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {21.093 -0.564}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {7.422 -11.671}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {7.407 -5.855}
+compile_pg -strategies core_mesh
+create_pg_std_cell_conn_pattern std_cell_rail -layers {M1} -rail_width 0.06
+set_pg_strategy rail_strat -core -pattern {{name: std_cell_rail} {nets: VDD VSS} }
+compile_pg -strategies rail_strat
+save_block
+save_lib
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {21.343 17.047}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {21.346 17.056}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {21.349 17.055}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {21.350 17.055}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {21.351 17.055}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {21.353 17.055}
+check_pg_drc
+check_design -checks pre_placement_stage
+suppress_message -force CMD-013
+suppress_message -force CMD-013; report_design_mismatch -check_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+suppress_message -force CMD-013; check_scan_chain >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+suppress_message -force CMD-013; check_mv_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+suppress_message -force CMD-013; check_rp_constraints >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+suppress_message -force CMD-013; check_timing >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+suppress_message -force CMD-013; check_hier_design -stage pre_placement >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194021.log
+unsuppress_message CMD-013
+create_placement -floorplan
+legalize_placement
+place_pins -self
+place_opt
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+report_placement
+report_timing
+check_design -checks pre_clock_tree_stage
+suppress_message -force CMD-013
+suppress_message -force CMD-013; report_design_mismatch -check_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_scan_chain >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_mv_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_legality >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_timing >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_clock_trees >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+suppress_message -force CMD-013; check_hier_design -stage pre_clock_tree >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194113.log
+unsuppress_message CMD-013
+set_app_options -name time.remove_clock_reconvergence_pessimism -value true
+report_clock_settings
+report_qor -summary
+report_timing
+clock_opt
+route_group -all_clock_nets -reuse_existing_global_route true -stop_after_global_route true
+
+route_group -all_clock_nets -reuse_existing_global_route true -stop_after_global_route true
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+set_app_options -as_user_default -list {route.global.global_route_topology_style 1}
+route_group -all_clock_nets -reuse_existing_global_route true
+set_app_options -as_user_default -list {route.global.global_route_topology_style 0}
+
+
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+
+report_timing
+check_design -checks pre_route_stage
+suppress_message -force CMD-013
+suppress_message -force CMD-013; report_design_mismatch -check_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+suppress_message -force CMD-013; check_scan_chain >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+suppress_message -force CMD-013; check_mv_design >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+suppress_message -force CMD-013; check_timing >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+suppress_message -force CMD-013; check_routability >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+suppress_message -force CMD-013; check_hier_design -stage pre_route >> /home/vlsi19/Desktop/24EC4204/dc_elevator/check_design2025Mar27194131.log
+unsuppress_message CMD-013
+route_auto -max_detail_route_iterations 30
+refresh_via_ladder_constraints -performance true -emt false
+route_eco
+route_opt
+report_timing
+report_routing_corridors
+check_pg_drc
+check_lvs
+save_block
+write_script -force -format icc2 -output ./reports/elevator_spef
+write_parasitics -output ./reports/spef_generation_1
+write_script -force -format icc2 -output ./reports/elevator_spef
+write_parasitics -output ./reports/spef_generation_1
+write_sdc -output ./results/elevator.sdc
+write_verilog ./results/elevator.sdc
+write_sdf ./results/elevator_final.sdf
+write_gds ./results/elevator_final.gds
+save_block
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {25.005 10.575}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {25.003 10.572}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {25.000 10.569}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {24.998 10.565}
+check_timing
+create_ems_database chk_timing.ems
+report_ems_database
+close_ems_databases
