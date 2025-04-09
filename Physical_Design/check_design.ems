@@ -1,0 +1,59 @@
+<Database>
+versionNumber:2
+Name/home/vlsi19/Desktop/24EC4204/dc_elevator/pd/check_design.ems
+Creation TimeThu Mar 27 19:05:13 2025
+Modified TimeThu Mar 27 19:05:13 2025
+Design Nameelevator
+Library Nameelevator_lib
+</Database>
+<RuleCount>
+DFT-0111
+TCK-00129
+TCK-01212
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DFT-011Informationreason10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointDoor_Alert_reg/RSTB1[ get_pin { Door_Alert_reg/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointWeight_Alert_reg/D1[ get_pin { Weight_Alert_reg/D } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointWeight_Alert_reg/RSTB1[ get_pin { Weight_Alert_reg/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[7]/RSTB1[ get_pin { door_timer_reg[7]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[6]/RSTB1[ get_pin { door_timer_reg[6]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[5]/RSTB1[ get_pin { door_timer_reg[5]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[4]/RSTB1[ get_pin { door_timer_reg[4]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[3]/RSTB1[ get_pin { door_timer_reg[3]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[2]/RSTB1[ get_pin { door_timer_reg[2]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[1]/RSTB1[ get_pin { door_timer_reg[1]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointdoor_timer_reg[0]/RSTB1[ get_pin { door_timer_reg[0]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointDirection_reg/RSTB1[ get_pin { Direction_reg/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[0]/RSTB1[ get_pin { Out_Current_Floor_reg[0]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[0]/SETB1[ get_pin { Out_Current_Floor_reg[0]/SETB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[3]/RSTB1[ get_pin { Out_Current_Floor_reg[3]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[3]/SETB1[ get_pin { Out_Current_Floor_reg[3]/SETB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[1]/RSTB1[ get_pin { Out_Current_Floor_reg[1]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[1]/SETB1[ get_pin { Out_Current_Floor_reg[1]/SETB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[2]/RSTB1[ get_pin { Out_Current_Floor_reg[2]/RSTB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor_reg[2]/SETB1[ get_pin { Out_Current_Floor_reg[2]/SETB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointComplete_reg/SETB1[ get_pin { Complete_reg/SETB } ]6modedefault1[ get_modes { default } ]39reasonfalse path10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointWeight_Alert1[ get_port { Weight_Alert } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointDoor_Alert1[ get_port { Door_Alert } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointComplete1[ get_port { Complete } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointDirection1[ get_port { Direction } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor[0]1[ get_port { Out_Current_Floor[0] } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor[1]1[ get_port { Out_Current_Floor[1] } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor[2]1[ get_port { Out_Current_Floor[2] } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-001Warningcornerdefault1[ get_corners { default } ]40endpointOut_Current_Floor[3]1[ get_port { Out_Current_Floor[3] } ]7modedefault1[ get_modes { default } ]39reasonunclocked10
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portRequest_Floor[3]1[ get_port { Request_Floor[3] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portRequest_Floor[2]1[ get_port { Request_Floor[2] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portRequest_Floor[1]1[ get_port { Request_Floor[1] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portRequest_Floor[0]1[ get_port { Request_Floor[0] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portIn_Current_Floor[3]1[ get_port { In_Current_Floor[3] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portIn_Current_Floor[2]1[ get_port { In_Current_Floor[2] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portIn_Current_Floor[1]1[ get_port { In_Current_Floor[1] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portIn_Current_Floor[0]1[ get_port { In_Current_Floor[0] } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portOver_Weight1[ get_port { Over_Weight } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portDoor_Open1[ get_port { Door_Open } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portFloor_Sensor1[ get_port { Floor_Sensor } ]7
+TCK-012Warningcornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39portreset1[ get_port { reset } ]7
+</Messages>

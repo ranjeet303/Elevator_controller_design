@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : elevator
+Version: U-2022.12-SP5
+Date   : Thu Mar 27 18:08:29 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32rvt_ff1p16v125c (File: /home/vlsi19/Desktop/24EC4204/dc_elevator/ref/lib/stdcell_rvt/saed32rvt_ff1p16v125c.db)
+
+Number of ports:                           21
+Number of nets:                           110
+Number of cells:                           87
+Number of combinational cells:             70
+Number of sequential cells:                16
+Number of macros/black boxes:               0
+Number of buf/inv:                          9
+Number of references:                      21
+
+Combinational area:                153.757122
+Buf/Inv area:                       11.436480
+Noncombinational area:             115.889666
+Macro/Black Box area:                0.000000
+Net Interconnect area:              50.112823
+
+Total cell area:                   269.646787
+Total area:                        319.759610
+1
